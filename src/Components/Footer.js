@@ -7,7 +7,7 @@ import {
 
 const Footer = ({ onNewGameClick, onNewGameWithComputerClick, gameState }) => {
   return (
-      <div className="panel footer">
+      <div className="footer">
           {gameState === GAME_STATE_PLAYING ? (
               <>
                   <button onClick={onNewGameClick}>New Game With Friend</button>
