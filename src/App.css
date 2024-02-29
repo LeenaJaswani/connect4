@@ -1,38 +1,101 @@
+:root {
+  --background-color: cornflowerblue;
+  --board-background-color: bisque;
+  --board-border-color: burlywood;
+  --panel-background-color: lightgoldenrodyellow;
+  --panel-border-color: burlywood;
+  --footer-button-background-color: lightBlue;
+  --footer-button-background-color-hover: chocolate;
+  --footer-button-border: chocolate;
+  --player-no-player: white;
+  --player-player1: red;
+  --player-player2: blue;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0; /* Ensure the body has no margin */
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+.panel {
+  background-color: var(--panel-background-color);
+  border: 0.5rem solid var(--panel-border-color);
+  box-shadow: 0.438rem 0.313rem 0.938rem 0.188rem rgba(0, 0, 0, 0.9);
+  z-index: 1;
+}
+
+.header {
+  height: 6rem;
+  width: 23.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+h1{
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.header-text {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  height: 6rem;
+  width: 26.75rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
 }
+
+.footer button {
+  width: 11.375rem;
+  height: 4.125rem;
+  background-color: var(--footer-button-background-color);
+  font-size: 1.25rem;
+  box-shadow: 0.188rem 0.313rem 0.625rem 0.125rem rgba(0, 0, 0, 0.9);
+  border: 0.313rem solid var(--footer-button-border);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  background-color: var(--footer-button-background-color-hover);
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 32.5rem;
+  padding: 1.25rem;
+  background-color: var(--board-background-color);
+  border: 0.5rem solid var(--board-border-color);
+  border-radius: 10%;
+  box-shadow: 0.438rem 0.313rem 0.938rem 0.188rem rgba(0, 0, 0, 0.9);
+}
+
+.gameCircle {
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  border: 0.313rem solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player_0 { background-color: var(--player-no-player); }
+.player_1 { background-color: var(--player-player1); }
+.player_2 { background-color: var(--player-player2); }
